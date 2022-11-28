@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { cardsData } from "./data";
+import ActiveTab from "./screens/ActiveTab";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {cardsData.map(eachCard => {
+        return <ActiveTab key={eachCard.title} card={eachCard} />;
+      })}
     </View>
   );
 }
@@ -13,8 +15,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "scroll",
+    height: 50,
   },
 });

@@ -1,0 +1,17 @@
+export const cardsData = [
+  { title: "Title 1", description: "Hi This is Test" },
+  { title: "Title 2", description: "Hi This is Test" },
+  { title: "Title 3", description: "Hi This is Test" },
+  { title: "Title 4", description: "Hi This is Test" },
+  { title: "Title 5", description: "Hi This is Test" },
+  { title: "Title 6", description: "Hi This is Test" },
+  { title: "Title 7", description: "Hi This is Test" },
+  { title: "Title 8", description: "Hi This is Test" },
+  { title: "Title 9", description: "Hi This is Test" },
+  { title: "Title 10", description: "Hi This is Test" },
+  { title: "Title 11", description: "Hi This is Test" },
+  { title: "Title 12", description: "Hi This is Test" },
+  { title: "Title 13", description: "Hi This is Test" },
+  { title: "Title 14", description: "Hi This is Test" },
+  { title: "Title 15", description: "Hi This is Test" },
+];
