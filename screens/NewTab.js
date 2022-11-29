@@ -2,18 +2,12 @@ import React from "react";
 
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-interface NewTabProps {
-  title: string;
-  value: string;
-  onPress: () => void;
-}
-
-const NewTab = (props: NewTabProps): React.ReactElement => {
-  const { title, value, onPress } = props;
+const NewTab = ({ route, navigation }): React.ReactElement => {
+  const { title, value } = route.params;
 
   return (
     <>
-      <TouchableOpacity style={styles.newTabsContainer} onPress={onPress}>
+      <TouchableOpacity style={styles.newTabsContainer}>
         <Text>{title}</Text>
         <Text>{value}</Text>
       </TouchableOpacity>

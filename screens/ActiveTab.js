@@ -2,14 +2,14 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 import { cardsData } from "../data";
 
-const ActiveTab = props => {
-  const card = props.card;
+const ActiveTab = ({ route, navigation }) => {
+  const card = route.params.card;
   const title = card.title;
   const value = card.description;
   const imageUrl = "https://picsum.photos/200/300";
 
   const handleOnPress = () => {
-    console.log(title);
+    navigation.navigate("Home", { card: card });
   };
 
   return (

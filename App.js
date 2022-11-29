@@ -7,18 +7,26 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import { cardsData } from "./data";
 import ActiveTab from "./screens/ActiveTab";
-import Navigations from "./routes/HomeStack";
+import DetailedView from "./screens/DetailedView";
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
+  const [card1, card2] = cardsData;
+
   return (
-    <ScrollView scrollViewStyles={styles.scrollViewStyles} horizontal={false}>
-      <View styles={styles.container}>
-        {cardsData.map(eachCard => {
-          return <ActiveTab key={eachCard.title} card={eachCard} />;
-        })}
-      </View>
-    </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={DetailedView} />
+        <Stack.Screen name="Profile" component={ActiveTab} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -31,6 +39,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "scroll",
+    height: "100%",
   },
   scrollViewStyles: {
     width: "100%",
