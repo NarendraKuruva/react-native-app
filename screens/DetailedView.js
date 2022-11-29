@@ -7,7 +7,7 @@ interface DetailedViewProps {
   description: string;
 }
 
-const DetailedView = ({ navigation }) => {
+const DetailedView = () => {
   const name = "Jane";
   const description = "This is a description";
 
@@ -22,9 +22,9 @@ const DetailedView = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "white",
+    width: 80,
+    height: 80,
+    backgroundColor: "red",
   },
 });
 

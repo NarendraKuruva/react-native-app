@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 import { cardsData } from "../data";
 
@@ -8,12 +8,21 @@ const ActiveTab = props => {
   const value = card.description;
   const imageUrl = "https://picsum.photos/200/300";
 
+  const handleOnPress = () => {
+    console.log(title);
+  };
+
   return (
-    <View style={styles.activeTabsContainer}>
-      <Image source={{ uri: imageUrl }} style={{ width: 100, height: 100 }} />
-      <Text style={styles.headingStyles}>{title}</Text>
-      <Text style={styles.description}>{value}</Text>
-    </View>
+    <TouchableOpacity onPress={handleOnPress}>
+      <View style={styles.activeTabsContainer}>
+        <Image
+          source={{ uri: imageUrl }}
+          style={{ width: 100, height: 100, borderRadius: 20 }}
+        />
+        <Text style={styles.headingStyles}>{title}</Text>
+        <Text style={styles.description}>{value}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -24,11 +33,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#1d2537",
     borderRadius: 16,
     margin: 16,
-    // width: "100%",
-    // height: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    padding: 10,
+    maxWidth: "100%",
   },
   headingStyles: {
     fontStyle: "normal",
