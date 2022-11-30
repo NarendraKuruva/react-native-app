@@ -1,22 +1,20 @@
 import React from "react";
+import { View, Text } from "react-native";
 
-import ActiveTab from "./ActiveTab";
+import NewTab from "./NewTab";
 
-const ActiveTabsList = (props): React.ReactElement => {
-  const { tabs } = props;
+const ActiveTabsList = ({ route, navigation }): React.ReactElement => {
+  const { tabs } = route.params.props;
+
   return (
-    <>
-      {tabs.map((tab, index) => {
+    <View>
+      {/* {tabs.map((tab, index) => {
         return (
-          <ActiveTab
-            title={tab.title}
-            value={tab.value}
-            imageUrl={tab.imageUrl}
-            key={index}
-          />
+          <NewTab title={tab.title} value={tab.description} key={tab.title} />
         );
-      })}
-    </>
+      })} */}
+      <Text>Narendra</Text>
+    </View>
   );
 };
 

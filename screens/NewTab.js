@@ -2,16 +2,17 @@ import React from "react";
 
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-const NewTab = ({ route, navigation }): React.ReactElement => {
-  const { title, value } = route.params;
+const NewTab = (props): React.ReactElement => {
+  const { title, value } = props;
+  console.log("🚀 ~ file: NewTab.js:8 ~ NewTab ~ title, value", title, value);
 
   return (
-    <>
-      <TouchableOpacity style={styles.newTabsContainer}>
+    <View>
+      <View style={styles.newTabsContainer}>
         <Text>{title}</Text>
         <Text>{value}</Text>
-      </TouchableOpacity>
-    </>
+      </View>
+    </View>
   );
 };
 

@@ -14,7 +14,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { cardsData } from "./data";
 import ActiveTab from "./screens/ActiveTab";
 import DetailedView from "./screens/DetailedView";
-
+import ActiveTabsList from "./screens/ActiveTabsList";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -25,6 +25,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={DetailedView} />
         <Stack.Screen name="Profile" component={ActiveTab} />
+        <Stack.Screen name="TabsList" component={ActiveTabsList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
