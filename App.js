@@ -11,15 +11,13 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { cardsData } from "./data";
 import ActiveTab from "./screens/ActiveTab";
 import DetailedView from "./screens/DetailedView";
 import ActiveTabsList from "./screens/ActiveTabsList";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [card1, card2] = cardsData;
-
   return (
     <NavigationContainer>
       <Stack.Navigator>

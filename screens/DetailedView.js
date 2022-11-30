@@ -29,7 +29,7 @@ const DetailedView = ({ navigation }) => {
       }
     >
       <View style={styles.container}>
-        <Text>{name}</Text>
+        <Text style={styles.textStyles}>{name}</Text>
         <Text>{description}</Text>
       </View>
     </TouchableOpacity>
@@ -39,9 +39,17 @@ const DetailedView = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    width: 80,
-    height: 80,
+    textAlign: "center",
+    width: 225,
+    height: 170,
     backgroundColor: "red",
+  },
+  textStyles: {
+    fontStyle: "normal",
+    fontWeight: "600",
+    fontSize: 48,
+    lineHeight: 63,
+    color: "#FFFFFF",
   },
 });
 

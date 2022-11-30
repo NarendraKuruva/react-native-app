@@ -1,41 +1,29 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
+
+import { homeTabsData } from "../data";
 
 import ActiveTabsList from "./ActiveTabsList";
 import NewTabsList from "./NewTabsList";
+import NewTab from "./NewTab";
 
-interface HomeTabsProps {
-  activeTabs: Array<{
-    title: string;
-    value: string;
-    imageUrl: string;
-  }>;
-  newTabs: Array<{ title: string; value: string }>;
-}
-
-const HomeTabs = (props: HomeTabsProps) => {
-  const { activeTabs, newTabs } = props;
+const HomeTabs = ({ navigation }) => {
+  const tabs = homeTabsData;
 
   return (
-    <>
-      <View style={{ backgroundColor: "#0F172A" }}>
-        <View style={styles.activeTabsContainer}>
-          <ActiveTabsList tabs={activeTabs} />
-        </View>
-        <View
-          style={{
-            borderBottomColor: "#64748B",
-            borderBottomWidth: 3,
-            borderRadius: 6,
-            marginLeft: 10,
-            marginRight: 10,
-          }}
-        />
-        <View style={styles.newTabsContainer}>
-          <NewTabsList tabs={newTabs} />
-        </View>
-      </View>
-    </>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={tabs}
+        renderItem={NewTab}
+        keyExtractor={item => item.id}
+      />
+    </SafeAreaView>
   );
 };
 
