@@ -3,17 +3,21 @@ import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const HomeTab = ({ item, navigation }) => {
-  const { name, description } = item.item;
+  const { userId, email, birthdate, firstName, lastName } = item.item;
 
   const handleOnPress = () =>
     navigation.navigate("Profile", {
-      card: { title: name, description: description },
+      card: item.item,
     });
 
   return (
-    <TouchableOpacity style={styles.homeTabContainer} onPress={handleOnPress}>
-      <Text style={styles.textStyles}>{name}</Text>
-      <Text style={styles.textStyles}>{description}</Text>
+    <TouchableOpacity
+      style={styles.homeTabContainer}
+      onPress={handleOnPress}
+      key={userId}
+    >
+      <Text style={styles.textStyles}>{firstName}</Text>
+      <Text style={styles.textStyles}>{email}</Text>
     </TouchableOpacity>
   );
 };

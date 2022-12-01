@@ -8,13 +8,13 @@ import {
 } from "react-native";
 
 import HomeTab from "./HomeTab";
-import { homeTabsData } from "../data";
+import { homeTabsData, usersData } from "../data";
 
 const HomeTabs = ({ navigation }) => {
-  const tabs = homeTabsData;
+  const tabs = usersData;
 
   const renderItem = item => {
-    return <HomeTab navigation={navigation} item={item} />;
+    return <HomeTab navigation={navigation} item={item} key={item.userId} />;
   };
 
   return (
