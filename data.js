@@ -1,3 +1,5 @@
+import { faker } from "@faker-js/faker";
+
 export const cardsData = [
   { title: "Title 1", description: "Hi This is Test" },
   { title: "Title 2", description: "Hi This is Test" },
@@ -30,3 +32,51 @@ export const homeTabsData = [
   { id: "6", name: "Lalitha", description: "Frontend Developer" },
   { id: "7", name: "Mahendra", description: "Backend Developer" },
 ];
+
+// import { faker } from '@faker-js/faker/locale/de';
+
+export const USERS: User[] = [];
+
+export function createRandomUser(): User {
+  return {
+    userId: faker.datatype.uuid(),
+    username: faker.internet.userName(),
+    email: faker.internet.email(),
+    avatar: faker.image.avatar(),
+    password: faker.internet.password(),
+    birthdate: faker.date.birthdate(),
+    registeredAt: faker.date.past(),
+  };
+}
+
+Array.from({ length: 10 }).forEach(() => {
+  USERS.push(createRandomUser());
+});
+
+export const usersData = [...Array(20)].map(() => {
+  const data = {
+    userId: faker.datatype.uuid(),
+    username: faker.internet.userName(),
+    email: faker.internet.email(),
+    avatar: faker.image.avatar(),
+    password: faker.internet.password(),
+    birthdate: faker.date.birthdate().toDateString(),
+    registeredAt: faker.date.past(),
+    profilePic: faker.image.avatar(75, 75, "people"),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    sex: faker.name.sex(),
+    description: faker.lorem.paragraph(10),
+    job: faker.name.jobTitle(),
+    jobDescription: faker.name.jobDescriptor(),
+    hobbies: [...Array(20)].map(() => {
+      let count = 0;
+      count = count + 1;
+      return {
+        count: `Hobby ${count}`,
+        hobby: faker.word.verb(),
+      };
+    }),
+  };
+  return data;
+});

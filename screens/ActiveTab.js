@@ -1,12 +1,19 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 
 import { cardsData } from "../data";
 
 const ActiveTab = ({ route, navigation }) => {
   const card = route.params.card;
-  const title = card.title;
+  const title = card.firstName;
   const value = card.description;
-  const imageUrl = "https://picsum.photos/200/300";
+  const imageUrl = card.profilePic;
 
   const handleOnPress = () => {
     navigation.navigate("Details", { props: { tabs: cardsData } });
@@ -14,6 +21,7 @@ const ActiveTab = ({ route, navigation }) => {
 
   return (
     <TouchableOpacity onPress={handleOnPress}>
+      <TextInput />
       <View style={styles.activeTabsContainer}>
         <Image
           source={{ uri: imageUrl }}
@@ -21,6 +29,15 @@ const ActiveTab = ({ route, navigation }) => {
         />
         <Text style={styles.headingStyles}>{title}</Text>
         <Text style={styles.description}>{value}</Text>
+        <View>
+          <Text>DOB</Text>
+          <Text>{card.birthdate}</Text>
+        </View>
+        <View>
+          <Text>Job: </Text>
+          <Text>{card.job}</Text>
+          <Text>{card.jobDescription}</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -32,12 +49,13 @@ const styles = StyleSheet.create({
   activeTabsContainer: {
     backgroundColor: "#1d2537",
     borderRadius: 16,
-    margin: 16,
+    margin: 8,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: 10,
     maxWidth: "100%",
+    padding: 20,
   },
   headingStyles: {
     fontStyle: "normal",
@@ -50,7 +68,8 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "500",
     fontSize: 16,
-    color: "red",
+    color: "#fff",
     paddingTop: 16,
+    textAlign: "center",
   },
 });
