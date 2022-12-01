@@ -7,20 +7,21 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import HomeTab from "./HomeTab";
 import { homeTabsData } from "../data";
-
-import ActiveTabsList from "./ActiveTabsList";
-import NewTabsList from "./NewTabsList";
-import NewTab from "./NewTab";
 
 const HomeTabs = ({ navigation }) => {
   const tabs = homeTabsData;
+
+  const renderItem = item => {
+    return <HomeTab navigation={navigation} item={item} />;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={tabs}
-        renderItem={NewTab}
+        renderItem={item => renderItem(item)}
         keyExtractor={item => item.id}
       />
     </SafeAreaView>

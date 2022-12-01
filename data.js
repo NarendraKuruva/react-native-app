@@ -22,11 +22,11 @@ export const cardsData = [
 ];
 
 export const homeTabsData = [
-  { id: "1", title: "Narendra", description: "Frontend Developer" },
-  { id: "2", title: "Muneera", description: "Frontend Developer" },
-  { id: "3", title: "Nagendra", description: "Frontend Developer" },
-  { id: "4", title: "Pavan", description: "Backend Developer" },
-  { id: "5", title: "Ravi Teja", description: "Backend Developer" },
-  { id: "6", title: "Lalitha", description: "Frontend Developer" },
-  { id: "7", title: "Mahendra", description: "Backend Developer" },
+  { id: "1", name: "Narendra", description: "Frontend Developer" },
+  { id: "2", name: "Muneera", description: "Frontend Developer" },
+  { id: "3", name: "Nagendra", description: "Frontend Developer" },
+  { id: "4", name: "Pavan", description: "Backend Developer" },
+  { id: "5", name: "Ravi Teja", description: "Backend Developer" },
+  { id: "6", name: "Lalitha", description: "Frontend Developer" },
+  { id: "7", name: "Mahendra", description: "Backend Developer" },
 ];

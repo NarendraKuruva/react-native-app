@@ -9,7 +9,7 @@ const ActiveTab = ({ route, navigation }) => {
   const imageUrl = "https://picsum.photos/200/300";
 
   const handleOnPress = () => {
-    navigation.navigate("TabsList", { props: { tabs: cardsData } });
+    navigation.navigate("Details", { props: { tabs: cardsData } });
   };
 
   return (
