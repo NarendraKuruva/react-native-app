@@ -53,6 +53,34 @@ Array.from({ length: 10 }).forEach(() => {
   USERS.push(createRandomUser());
 });
 
+export const keyRoles = [...Array(3)].map(() => {
+  const data = {
+    userId: faker.datatype.uuid(),
+    username: faker.internet.userName(),
+    email: faker.internet.email(),
+    avatar: faker.image.avatar(),
+    password: faker.internet.password(),
+    birthdate: faker.date.birthdate().toDateString(),
+    registeredAt: faker.date.past(),
+    profilePic: faker.image.avatar(75, 75, "people"),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    sex: faker.name.sex(),
+    description: faker.lorem.paragraph(10),
+    job: faker.name.jobTitle(),
+    jobDescription: faker.name.jobDescriptor(),
+    hobbies: [...Array(20)].map(() => {
+      let count = 0;
+      count = count + 1;
+      return {
+        count: `Hobby ${count}`,
+        hobby: faker.word.verb(),
+      };
+    }),
+  };
+  return data;
+});
+
 export const usersData = [...Array(20)].map(() => {
   const data = {
     userId: faker.datatype.uuid(),
@@ -80,3 +108,8 @@ export const usersData = [...Array(20)].map(() => {
   };
   return data;
 });
+
+export const usersGroupsData = [
+  { title: "Main Roles", data: keyRoles },
+  { title: "Employees", data: usersData },
+];

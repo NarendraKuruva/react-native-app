@@ -3,11 +3,11 @@ import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const HomeTab = ({ item, navigation }) => {
-  const { userId, email, birthdate, firstName, lastName } = item.item;
+  const { userId, email, birthdate, firstName, lastName } = item;
 
   const handleOnPress = () =>
     navigation.navigate("Profile", {
-      card: item.item,
+      card: item,
     });
 
   return (

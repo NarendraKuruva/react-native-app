@@ -21,7 +21,6 @@ const ActiveTab = ({ route, navigation }) => {
 
   return (
     <TouchableOpacity onPress={handleOnPress}>
-      <TextInput />
       <View style={styles.activeTabsContainer}>
         <Image
           source={{ uri: imageUrl }}

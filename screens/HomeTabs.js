@@ -13,9 +13,9 @@ import { homeTabsData, usersData } from "../data";
 const HomeTabs = ({ navigation }) => {
   const tabs = usersData;
 
-  const renderItem = item => {
-    return <HomeTab navigation={navigation} item={item} key={item.userId} />;
-  };
+  const renderItem = item => (
+    <HomeTab navigation={navigation} item={item} key={item.userId} />
+  );
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,6 +23,7 @@ const HomeTabs = ({ navigation }) => {
         data={tabs}
         renderItem={item => renderItem(item)}
         keyExtractor={item => item.id}
+        getItemCount={data.length}
       />
     </SafeAreaView>
   );
