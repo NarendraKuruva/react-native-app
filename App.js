@@ -21,10 +21,40 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName={"Home"}
+        screenOptions={{
+          headerBackButtonMenuEnabled: false,
+          headerBackVisible: false,
+          headerTitleAlign: "center",
+          hideNavigationBar: false,
+          statusBarColor: "#1d2537",
+          statusBarStyle: "light",
+          statusBarAnimation: "fade",
+          fullScreenGestureEnabled: true,
+          animation: "slide_from_right",
+          orientation: "all",
+          navigationBarColor: "#1d2537",
+          navigationBarHidden: true,
+          headerShown: false,
+        }}
+      >
         <Stack.Screen name="Home" component={JobSections} />
-        <Stack.Screen name="Profile" component={ActiveTab} />
-        <Stack.Screen name="Details" component={ActiveTabsList} />
+        <Stack.Screen
+          name="Profile"
+          component={ActiveTab}
+          options={{ headerShown: true }}
+        />
+
+        <Stack.Screen
+          name="Details"
+          component={ActiveTabsList}
+          options={{
+            headerShown: true,
+            animation: "slide_from_bottom",
+            animationDuration: 10,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
