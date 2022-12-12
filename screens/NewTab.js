@@ -6,7 +6,7 @@ const NewTab = ({ item }): React.ReactElement => {
   const { title, description } = item;
 
   return (
-    <TouchableOpacity style={styles.newTabsContainer}>
+    <TouchableOpacity style={styles.newTabsContainer} key={title}>
       <Text style={styles.textStyles}>{title}</Text>
       <Text style={styles.textStyles}>{description}</Text>
     </TouchableOpacity>

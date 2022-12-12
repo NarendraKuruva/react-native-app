@@ -20,7 +20,7 @@ const ActiveTab = ({ route, navigation }) => {
   };
 
   return (
-    <TouchableOpacity onPress={handleOnPress}>
+    <TouchableOpacity onPress={handleOnPress} key={card.userId}>
       <View style={styles.activeTabsContainer}>
         <Image
           source={{ uri: imageUrl }}

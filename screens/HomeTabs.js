@@ -10,15 +10,13 @@ import {
 import HomeTab from "./HomeTab";
 import { homeTabsData, usersData } from "../data";
 
-const HomeTabs = ({ navigation }) => {
+const HomeTabs = () => {
   const tabs = usersData;
 
-  const renderItem = item => (
-    <HomeTab navigation={navigation} item={item} key={item.userId} />
-  );
+  const renderItem = item => <HomeTab item={item} key={item.userId} />;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} key={"HomeTabs"}>
       <FlatList
         data={tabs}
         renderItem={item => renderItem(item)}

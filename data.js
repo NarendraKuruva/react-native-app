@@ -45,7 +45,6 @@ export function createRandomUser(): User {
     avatar: faker.image.avatar(),
     password: faker.internet.password(),
     birthdate: faker.date.birthdate(),
-    registeredAt: faker.date.past(),
   };
 }
 
@@ -61,7 +60,6 @@ export const keyRoles = [...Array(3)].map(() => {
     avatar: faker.image.avatar(),
     password: faker.internet.password(),
     birthdate: faker.date.birthdate().toDateString(),
-    registeredAt: faker.date.past(),
     profilePic: faker.image.avatar(75, 75, "people"),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
@@ -89,7 +87,6 @@ export const usersData = [...Array(20)].map(() => {
     avatar: faker.image.avatar(),
     password: faker.internet.password(),
     birthdate: faker.date.birthdate().toDateString(),
-    registeredAt: faker.date.past(),
     profilePic: faker.image.avatar(75, 75, "people"),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),

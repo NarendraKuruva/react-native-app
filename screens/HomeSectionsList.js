@@ -6,12 +6,10 @@ import { keyRoles, usersGroupsData } from "../data";
 import HomeTab from "./HomeTab";
 
 const JobSections = ({ navigation }) => {
-  const renderItem = item => (
-    <HomeTab navigation={navigation} item={item} key={item.userId} />
-  );
+  const renderItem = item => <HomeTab item={item} key={item.userId} />;
 
   return (
-    <View>
+    <View key={"JobSections"}>
       <SectionList
         sections={usersGroupsData}
         keyExtractor={(item, index) => item + index}
