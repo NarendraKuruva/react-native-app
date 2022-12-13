@@ -16,6 +16,7 @@ import ActiveTab from "./screens/ActiveTab";
 import ActiveTabsList from "./screens/ActiveTabsList";
 import HomeTabs from "./screens/HomeTabs";
 import JobSections from "./screens/HomeSectionsList";
+import UserProfile from "./screens/BottomTabBar/Profile";
 
 const Stack = createNativeStackNavigator();
 
@@ -46,7 +47,11 @@ export default function App() {
           component={ActiveTab}
           options={{ headerShown: true }}
         />
-
+        <Stack.Screen
+          name="UserProfile"
+          component={UserProfile}
+          options={{ headerShown: true }}
+        />
         <Stack.Screen
           name="Details"
           component={ActiveTabsList}

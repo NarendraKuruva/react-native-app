@@ -5,9 +5,11 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  Button,
 } from "react-native";
 
 import { cardsData } from "../data";
+import BottomApp from "./BottomTabBar/TabBar";
 
 const ActiveTab = ({ route, navigation }) => {
   const card = route.params.card;
@@ -15,30 +17,37 @@ const ActiveTab = ({ route, navigation }) => {
   const value = card.description;
   const imageUrl = card.profilePic;
 
-  const handleOnPress = () => {
+  const handleOnPressCard = () => {
     navigation.navigate("Details", { props: { tabs: cardsData } });
   };
 
+  const onPressGoToProfile = () => {
+    navigation.navigate("UserProfile", { tabs: cardsData });
+  };
+
   return (
-    <TouchableOpacity onPress={handleOnPress} key={card.userId}>
-      <View style={styles.activeTabsContainer}>
-        <Image
-          source={{ uri: imageUrl }}
-          style={{ width: 100, height: 100, borderRadius: 20 }}
-        />
-        <Text style={styles.headingStyles}>{title}</Text>
-        <Text style={styles.description}>{value}</Text>
-        <View>
-          <Text>DOB</Text>
-          <Text>{card.birthdate}</Text>
+    <View>
+      <TouchableOpacity onPress={handleOnPressCard} key={card.userId}>
+        <View style={styles.activeTabsContainer}>
+          <Image
+            source={{ uri: imageUrl }}
+            style={{ width: 100, height: 100, borderRadius: 20 }}
+          />
+          <Text style={styles.headingStyles}>{title}</Text>
+          <Text style={styles.description}>{value}</Text>
+          <View>
+            <Text>DOB</Text>
+            <Text>{card.birthdate}</Text>
+          </View>
+          <View>
+            <Text>Job: </Text>
+            <Text>{card.job}</Text>
+            <Text>{card.jobDescription}</Text>
+          </View>
         </View>
-        <View>
-          <Text>Job: </Text>
-          <Text>{card.job}</Text>
-          <Text>{card.jobDescription}</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+      <Button title={"Go To Profile"} onPress={onPressGoToProfile} />
+    </View>
   );
 };
 
