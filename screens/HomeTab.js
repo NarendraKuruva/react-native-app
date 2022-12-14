@@ -2,10 +2,12 @@ import React from "react";
 
 import { NavigationContext } from "@react-navigation/native";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const HomeTab = ({ item }) => {
   const { userId, email, birthdate, firstName, lastName } = item;
-  const navigation = React.useContext(NavigationContext);
+  const navigation = useNavigation();
+  const route = useRoute();
 
   const handleOnPress = () =>
     navigation.navigate("Profile", {
