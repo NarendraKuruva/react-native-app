@@ -6,8 +6,9 @@ import {
   TouchableOpacity,
   TextInput,
   Button,
+  Linking,
 } from "react-native";
-
+import { useCallback } from "react";
 import { cardsData } from "../data";
 import BottomApp from "./BottomTabBar/TabBar";
 
@@ -24,6 +25,11 @@ const ActiveTab = ({ route, navigation }) => {
   const onPressGoToProfile = () => {
     navigation.navigate("UserProfile", { tabs: cardsData });
   };
+
+  const handlePress = useCallback(async () => {
+    const url = "https://github.com/NarendraKuruva";
+    await Linking.openURL(url);
+  }, []);
 
   return (
     <View>
@@ -46,7 +52,12 @@ const ActiveTab = ({ route, navigation }) => {
           </View>
         </View>
       </TouchableOpacity>
-      <Button title={"Go To Profile"} onPress={onPressGoToProfile} />
+      <View style={{ margin: 10 }}>
+        <Button title={"Go To Profile"} onPress={onPressGoToProfile} />
+      </View>
+      <View style={{ margin: 10 }}>
+        <Button title={"Show GitHub Profile"} onPress={handlePress} />
+      </View>
     </View>
   );
 };
