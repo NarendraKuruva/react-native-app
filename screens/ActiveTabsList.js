@@ -14,7 +14,7 @@ const ActiveTabsList = ({ route, navigation }): React.ReactElement => {
   const { tabs } = route.params.props;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} key={"ActiveTabsList"}>
       <FlatList
         data={tabs}
         renderItem={NewTab}
