@@ -18,9 +18,22 @@ import HomeTabs from "./screens/HomeTabs";
 import JobSections from "./screens/HomeSectionsList";
 import UserProfile from "./screens/BottomTabBar/Profile";
 
+import { MyAppStoreContext } from "./MyApp/index.context";
+import { MyAppStore } from "./MyApp/stores/MyAppStore";
+import { usersData } from "./data";
+import { UserModel } from "./MyApp/stores/UserModel";
+import React, { useContext, useEffect } from "react";
+import { observer } from "mobx-react";
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+function App() {
+  const myAppStore: MyAppStore = useContext(MyAppStoreContext);
+  useEffect(() => {
+    usersData.map(each => {
+      myAppStore.addUser(new UserModel(each));
+    });
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -65,6 +78,8 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+export default observer(App);
 
 const styles = StyleSheet.create({
   container: {

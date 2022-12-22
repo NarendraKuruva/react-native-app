@@ -16,15 +16,15 @@ export default function UserProfile({ route, navigation }) {
         screenOptions={{ orientation: "all" }}
       >
         <Tab.Screen
-          name="About Me"
+          name="All Contacts"
           component={AboutMe}
           initialParams={route.params.tabs}
-          options={{ tabBarLabel: "About Me" }}
+          options={{ tabBarLabel: "All Contacts" }}
         />
         <Tab.Screen
-          name="Hobbies"
+          name="Favorites"
           component={Hobbies}
-          options={{ tabBarLabel: "Hobbies" }}
+          options={{ tabBarLabel: "Favorites" }}
         />
       </Tab.Navigator>
     </NavigationContainer>

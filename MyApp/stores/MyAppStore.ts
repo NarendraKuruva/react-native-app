@@ -1,10 +1,11 @@
-import { action, observable } from "mobx";
+import { action, computed, observable } from "mobx";
 import React from "react";
 
 import { UserModel } from "./UserModel";
 
 class MyAppStore {
-  @observable users!: UserModel[];
+  @observable usersMap!: Map<string, UserModel>;
+  @observable favoriteContacts!: string[];
   @observable employeeIds!: string[];
   @observable rpsIds!: string[];
   constructor() {
@@ -12,14 +13,25 @@ class MyAppStore {
   }
 
   init() {
-    this.users = [];
+    this.usersMap = new Map();
     this.employeeIds = [];
     this.rpsIds = [];
+    this.favoriteContacts = [];
+  }
+
+  @computed
+  get users() {
+    return Array.from(this.usersMap.values());
   }
 
   @action.bound
-  setUsers(users) {
-    this.users = users;
+  addUser(user) {
+    this.usersMap.set(user.userId, user);
+  }
+
+  @action.bound
+  getUser(userId: string) {
+    return this.usersMap.get(userId);
   }
 
   @action.bound
@@ -31,6 +43,19 @@ class MyAppStore {
   setRPIds(rpsIds: string[]) {
     this.rpsIds = rpsIds;
   }
+
+  @action.bound
+  toggleLikedUser(userId: string) {
+    if (!this.favoriteContacts.includes(userId)) {
+      this.favoriteContacts = [...this.favoriteContacts, userId];
+    } else {
+      this.favoriteContacts = this.favoriteContacts.filter(
+        each => each !== userId
+      );
+    }
+  }
+
+  isUserLiked = (userId: string) => this.favoriteContacts.includes(userId);
 }
 
 export { MyAppStore };

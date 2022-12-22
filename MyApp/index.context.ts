@@ -1,10 +1,10 @@
 import React from "react";
-import { useContext } from "react";
+import { createContext } from "react";
 
 import { MyAppStore } from "./stores/MyAppStore";
 
 const myAppStore = new MyAppStore();
 
-const MyAppStoreContext = useContext(myAppStore);
+const MyAppStoreContext = createContext(myAppStore);
 
 export { MyAppStoreContext };
