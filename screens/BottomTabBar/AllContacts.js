@@ -1,35 +1,30 @@
 import { observer } from "mobx-react";
 import React, { useContext } from "react";
 
-import { View, Text } from "react-native";
+import { Text, View, ScrollView, SafeAreaView } from "react-native";
 import { MyAppStoreContext } from "../../MyApp/index.context";
-import { UserModel } from "../../MyApp/stores/UserModel";
 import { UserCard } from "./UserCard";
-
-function Hobbies() {
-  const usersStore = useContext(MyAppStoreContext);
-  const users: UserModel[] = [];
-
-  usersStore.favoriteContacts.forEach(each => {
-    const user = usersStore.getUser(each);
-    if (user) users.push(user);
-  });
+function AllContacts({ route }) {
+  const myTasksStore = useContext(MyAppStoreContext);
+  const users = myTasksStore.users;
 
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         overflow: "scroll",
+        marginTop: 10,
+        marginBottom: 10,
       }}
     >
       {users.map(each => (
         <UserCard user={each} key={each.userId} />
       ))}
-    </View>
+    </SafeAreaView>
   );
 }
 
-export default observer(Hobbies);
+export default observer(AllContacts);

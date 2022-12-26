@@ -1,11 +1,13 @@
 import { observer } from "mobx-react";
 import React, { useContext } from "react";
 import { View, Text, Image, Touchable, TouchableOpacity } from "react-native";
+
 import { UserModel } from "../../MyApp/stores/UserModel";
 import HeartIcon from "../../MyApp/icons/HeartIcon";
 import { MyAppStoreContext } from "../../MyApp/index.context";
 import DislikeIcon from "../../MyApp/icons/DislikeIcon";
 import LikeIcon from "../../MyApp/icons/LikeIcon";
+
 interface Props {
   user: UserModel;
 }
@@ -24,11 +26,13 @@ const UserCard = observer((props: Props) => {
     <View
       style={{
         backgroundColor: "#E0F2FE",
-        width: "312px",
-        height: "52px",
-        borderRadius: "8px",
-        padding: "8px",
-        marginBottom: "10px",
+        width: "95%",
+        height: 52,
+        borderRadius: 8,
+        padding: 8,
+        marginBottom: 10,
+        // marginLeft: 40,
+        // marginRight: 40,
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",

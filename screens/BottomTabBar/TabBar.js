@@ -9,8 +9,8 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AboutMe from "./AboutMe";
-import Hobbies from "./Hobbies";
+import AllContacts from "./AllContacts";
+import Favorites from "./Favorites";
 
 const Tab = createBottomTabNavigator();
 

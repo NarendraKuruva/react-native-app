@@ -3,8 +3,8 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { View, Text, TouchableOpacity, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AboutMe from "./AboutMe";
-import Hobbies from "./Hobbies";
+import AllContacts from "./AllContacts";
+import Favorites from "./Favorites";
 import { MyTabBar } from "./TabBar";
 // const Tab = createBottomTabNavigator();
 const Tab = createMaterialTopTabNavigator();
@@ -17,13 +17,13 @@ export default function UserProfile({ route, navigation }) {
       >
         <Tab.Screen
           name="All Contacts"
-          component={AboutMe}
+          component={AllContacts}
           initialParams={route.params.tabs}
           options={{ tabBarLabel: "All Contacts" }}
         />
         <Tab.Screen
           name="Favorites"
-          component={Hobbies}
+          component={Favorites}
           options={{ tabBarLabel: "Favorites" }}
         />
       </Tab.Navigator>
