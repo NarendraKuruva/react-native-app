@@ -14,8 +14,11 @@ interface Props {
 
 const UserCard = observer((props: Props) => {
   const user = props.user;
+
   const { name, firstName } = user;
+
   const usersStore = useContext(MyAppStoreContext);
+
   const isUserLiked = usersStore.isUserLiked(user.userId);
 
   const handlePress = () => {

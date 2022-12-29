@@ -9,21 +9,23 @@ function AllContacts({ route }) {
   const users = myTasksStore.users;
 
   return (
-    <SafeAreaView
+    <ScrollView
       style={{
         flex: 1,
         flexDirection: "column",
+        overflow: "scroll",
+        marginTop: 8,
+        marginBottom: 8,
+      }}
+      contentContainerStyle={{
         justifyContent: "flex-start",
         alignItems: "center",
-        overflow: "scroll",
-        marginTop: 10,
-        marginBottom: 10,
       }}
     >
       {users.map(each => (
         <UserCard user={each} key={each.userId} />
       ))}
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 

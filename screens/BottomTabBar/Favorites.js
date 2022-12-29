@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import React, { useContext } from "react";
 
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { MyAppStoreContext } from "../../MyApp/index.context";
 import { UserModel } from "../../MyApp/stores/UserModel";
 import { UserCard } from "./UserCard";
@@ -16,21 +16,23 @@ function Favorites() {
   });
 
   return (
-    <SafeAreaView
+    <ScrollView
       style={{
         flex: 1,
         flexDirection: "column",
+        overflow: "scroll",
+        marginTop: 8,
+        marginBottom: 8,
+      }}
+      contentContainerStyle={{
         justifyContent: "flex-start",
         alignItems: "center",
-        overflow: "scroll",
-        marginTop: 10,
-        marginBottom: 10,
       }}
     >
       {users.map(each => (
         <UserCard user={each} key={each.userId} />
       ))}
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
