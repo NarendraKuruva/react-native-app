@@ -1,13 +1,8 @@
 import "react-native-gesture-handler";
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+
+import { observer } from "mobx-react";
+import React, { useContext, useEffect } from "react";
+import { StyleSheet } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -18,12 +13,12 @@ import HomeTabs from "./screens/HomeTabs";
 import JobSections from "./screens/HomeSectionsList";
 import UserProfile from "./screens/BottomTabBar/Profile";
 
+import { usersData } from "./data";
+
 import { MyAppStoreContext } from "./MyApp/index.context";
 import { MyAppStore } from "./MyApp/stores/MyAppStore";
-import { usersData } from "./data";
 import { UserModel } from "./MyApp/stores/UserModel";
-import React, { useContext, useEffect } from "react";
-import { observer } from "mobx-react";
+
 const Stack = createNativeStackNavigator();
 
 function App() {

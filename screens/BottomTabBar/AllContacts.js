@@ -17,9 +17,11 @@ function AllContacts({ route }) {
 
   const [filteredUsers, setFilteredUsers] = useState(users);
 
-  const onChangeValue = ({ nativeEvent: { eventCount, target, text } }) => {
-    const values = filteredUsers.filter(
-      each => each.firstName.includes(text) || each.lastName.includes(text)
+  const onChangeValue = value => {
+    const values = users.filter(
+      each =>
+        each.firstName.includes(value.trim()) ||
+        each.lastName.includes(value.trim())
     );
     setFilteredUsers(values);
   };
@@ -32,7 +34,11 @@ function AllContacts({ route }) {
         }}
       >
         <TextInput
-          onChange={onChangeValue}
+          onChangeText={onChangeValue}
+          // multiline={true}
+          placeholder={"Search Contacts - (Max 8 char)"}
+          maxLength={8}
+          keyboardType={"default"}
           style={{
             borderStyle: "solid",
             borderColor: "#000",
@@ -45,9 +51,9 @@ function AllContacts({ route }) {
       </View>
       <ScrollView
         style={{
+          display: "flex",
           flex: 1,
           flexDirection: "column",
-          overflow: "scroll",
           marginTop: 8,
           marginBottom: 8,
           height: "100%",
@@ -56,6 +62,9 @@ function AllContacts({ route }) {
           justifyContent: "flex-start",
           alignItems: "center",
         }}
+        pagingEnabled={true}
+        snapToInterval={5}
+        showsHorizontalScrollIndicator={true}
       >
         {filteredUsers.map(each => (
           <UserCard user={each} key={each.userId} />
