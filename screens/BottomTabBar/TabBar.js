@@ -1,10 +1,16 @@
 import * as React from "react";
-import { View, Text, TouchableOpacity, Button } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Button,
+  SafeAreaView,
+} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AboutMe from "./AboutMe";
-import Hobbies from "./Hobbies";
+import AllContacts from "./AllContacts";
+import Favorites from "./Favorites";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +31,7 @@ export function MyTabBar({ state, descriptors, navigation }) {
 
     return (
       <TouchableOpacity
+        key={label}
         accessibilityRole="button"
         accessibilityState={isFocused ? { selected: true } : {}}
         accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -59,7 +66,7 @@ export function MyTabBar({ state, descriptors, navigation }) {
   };
 
   return (
-    <View style={{ flexDirection: "row", backgroundColor: "#f0ddc0" }}>
+    <SafeAreaView style={{ flexDirection: "row", backgroundColor: "#f0ddc0" }}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
 
@@ -85,6 +92,6 @@ export function MyTabBar({ state, descriptors, navigation }) {
 
         return renderTab(options, route, isFocused, onPress, onLongPress);
       })}
-    </View>
+    </SafeAreaView>
   );
 }

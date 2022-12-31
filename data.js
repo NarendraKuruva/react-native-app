@@ -33,25 +33,6 @@ export const homeTabsData = [
   { id: "7", name: "Mahendra", description: "Backend Developer" },
 ];
 
-// import { faker } from '@faker-js/faker/locale/de';
-
-export const USERS: User[] = [];
-
-export function createRandomUser(): User {
-  return {
-    userId: faker.datatype.uuid(),
-    username: faker.internet.userName(),
-    email: faker.internet.email(),
-    avatar: faker.image.avatar(),
-    password: faker.internet.password(),
-    birthdate: faker.date.birthdate(),
-  };
-}
-
-Array.from({ length: 10 }).forEach(() => {
-  USERS.push(createRandomUser());
-});
-
 export const keyRoles = [...Array(3)].map(() => {
   const data = {
     userId: faker.datatype.uuid(),
