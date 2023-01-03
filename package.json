@@ -21,6 +21,7 @@
     "expo-status-bar": "~1.4.2",
     "mobx": "5.15.0",
     "mobx-react": "6.1.4",
+    "nativewind": "2.0.11",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
@@ -39,7 +40,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@faker-js/faker": "7.6.0"
+    "@faker-js/faker": "7.6.0",
+    "tailwindcss": "3.2.4"
   },
   "private": true
 }

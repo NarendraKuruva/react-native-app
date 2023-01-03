@@ -34,14 +34,13 @@ function AllContacts({ route }) {
         }}
       >
         <TextInput
+          className={"border-solid border-gray-900 border"}
           onChangeText={onChangeValue}
-          // multiline={true}
+          multiline={true}
           placeholder={"Search Contacts - (Max 8 char)"}
-          maxLength={8}
+          maxLength={50}
           keyboardType={"default"}
           style={{
-            borderStyle: "solid",
-            borderColor: "#000",
             borderWidth: 1,
             borderRadius: 10,
             paddingLeft: 10,
@@ -50,14 +49,7 @@ function AllContacts({ route }) {
         />
       </View>
       <ScrollView
-        style={{
-          display: "flex",
-          flex: 1,
-          flexDirection: "column",
-          marginTop: 8,
-          marginBottom: 8,
-          height: "100%",
-        }}
+        className={"flex flex-1 flex-col h-full"}
         contentContainerStyle={{
           justifyContent: "flex-start",
           alignItems: "center",
