@@ -34,8 +34,6 @@ const UserCard = observer((props: Props) => {
         borderRadius: 8,
         padding: 8,
         marginBottom: 10,
-        // marginLeft: 40,
-        // marginRight: 40,
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",

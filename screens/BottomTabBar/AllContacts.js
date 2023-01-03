@@ -8,14 +8,20 @@ import {
   SafeAreaView,
   TextInput,
   StatusBar,
+  Button,
 } from "react-native";
 import { MyAppStoreContext } from "../../MyApp/index.context";
 import { UserCard } from "./UserCard";
+import WriteComment from "../WriteCommentModal";
+
 function AllContacts({ route }) {
   const myTasksStore = useContext(MyAppStoreContext);
   const users = myTasksStore.users;
 
+  const [isOpen, setIsOpen] = useState(false);
   const [filteredUsers, setFilteredUsers] = useState(users);
+
+  const toggleIsOpen = () => setIsOpen(!isOpen);
 
   const onChangeValue = value => {
     const values = users.filter(
@@ -36,9 +42,8 @@ function AllContacts({ route }) {
         <TextInput
           className={"border-solid border-gray-900 border"}
           onChangeText={onChangeValue}
-          multiline={true}
           placeholder={"Search Contacts - (Max 8 char)"}
-          maxLength={50}
+          maxLength={15}
           keyboardType={"default"}
           style={{
             borderWidth: 1,
@@ -61,6 +66,10 @@ function AllContacts({ route }) {
         {filteredUsers.map(each => (
           <UserCard user={each} key={each.userId} />
         ))}
+
+        <Button title="Click Me" onPress={toggleIsOpen} />
+
+        <WriteComment isOpen={isOpen} setIsOpen={toggleIsOpen} />
       </ScrollView>
     </View>
   );
