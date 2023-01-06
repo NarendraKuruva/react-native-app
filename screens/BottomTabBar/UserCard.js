@@ -58,13 +58,13 @@ const UserCard = observer((props: Props) => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          borderWidth: isBulkEditEnabled ? 5 : 0,
-          borderColor: isBulkEditEnabled ? "#000" : "",
+          borderWidth: isBulkEditEnabled ? 3 : 0,
+          borderColor: isBulkEditEnabled ? "#BAE3FF" : "",
         }}
       >
         <Image
           source={{ uri: user.profilePicURL }}
-          style={{ width: 50, height: 50 }}
+          style={{ width: 45, height: 45 }}
         />
         <Text>{name}</Text>
         <TouchableOpacity onPress={handlePressLike}>
