@@ -19,7 +19,6 @@ const MyList = observer((props: Props) => {
       data={users}
       renderItem={renderItem}
       estimatedItemSize={200}
-      // initialScrollIndex={10}
       numColumns={1}
     />
   );
