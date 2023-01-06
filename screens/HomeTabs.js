@@ -9,7 +9,7 @@ import {
 
 import HomeTab from "./HomeTab";
 import { homeTabsData, usersData } from "../data";
-
+import { MyList } from "./FlashList";
 const HomeTabs = () => {
   const tabs = usersData;
 
@@ -17,12 +17,13 @@ const HomeTabs = () => {
 
   return (
     <SafeAreaView style={styles.container} key={"HomeTabs"}>
-      <FlatList
+      {/* <FlatList
         data={tabs}
         renderItem={item => renderItem(item)}
         keyExtractor={item => item.id}
         getItemCount={data.length}
-      />
+      /> */}
+      <MyList />
     </SafeAreaView>
   );
 };

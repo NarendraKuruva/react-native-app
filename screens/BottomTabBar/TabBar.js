@@ -53,12 +53,7 @@ export function MyTabBar({ state, descriptors, navigation }) {
             padding: 5,
           }}
         >
-          <Icon
-            name="user"
-            backgroundColor="#3b5998"
-            onPress={console.log}
-            size={25}
-          />
+          <Icon name="user" backgroundColor="#3b5998" size={25} />
           <Text style={{ marginLeft: 12 }}>{label}</Text>
         </View>
       </TouchableOpacity>
