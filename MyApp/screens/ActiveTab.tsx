@@ -4,13 +4,11 @@ import {
   View,
   Image,
   TouchableOpacity,
-  TextInput,
   Button,
   Linking,
 } from "react-native";
 import { useCallback } from "react";
 import { cardsData } from "../data";
-import BottomApp from "./BottomTabBar/TabBar";
 
 const ActiveTab = ({ route, navigation }) => {
   const card = route.params.card;
@@ -74,7 +72,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     maxWidth: "100%",
-    padding: 20,
   },
   headingStyles: {
     fontStyle: "normal",

@@ -1,16 +1,7 @@
 import * as React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Button,
-  SafeAreaView,
-} from "react-native";
+import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AllContacts from "./AllContacts";
-import Favorites from "./Favorites";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +37,6 @@ export function MyTabBar({ state, descriptors, navigation }) {
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
-            border: 1,
             borderStyle: "solid",
             borderWidth: 1,
             borderRadius: 10,

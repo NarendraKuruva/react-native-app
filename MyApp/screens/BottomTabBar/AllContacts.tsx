@@ -2,7 +2,7 @@ import { observer } from "mobx-react";
 import React, { useContext, useState } from "react";
 import { Button, TextInput, View } from "react-native";
 
-import { MyAppStoreContext } from "../../MyApp/index.context";
+import { MyAppStoreContext } from "../../index.context";
 
 import { MyList } from "../FlashList";
 

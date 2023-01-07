@@ -7,13 +7,12 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import ActiveTab from "./screens/ActiveTab";
-import ActiveTabsList from "./screens/ActiveTabsList";
-import HomeTabs from "./screens/HomeTabs";
-import JobSections from "./screens/HomeSectionsList";
-import UserProfile from "./screens/BottomTabBar/Profile";
+import ActiveTab from "./MyApp/screens/ActiveTab";
+import ActiveTabsList from "./MyApp/screens/ActiveTabsList";
+import JobSections from "./MyApp/screens/HomeSectionsList";
+import UserProfile from "./MyApp/screens/BottomTabBar/Profile";
 
-import { usersData } from "./data";
+import { usersData } from "./MyApp/data";
 
 import { MyAppStoreContext } from "./MyApp/index.context";
 import { MyAppStore } from "./MyApp/stores/MyAppStore";
@@ -37,7 +36,6 @@ function App() {
           headerBackButtonMenuEnabled: false,
           headerBackVisible: false,
           headerTitleAlign: "center",
-          hideNavigationBar: false,
           statusBarColor: "#1d2537",
           statusBarStyle: "light",
           statusBarAnimation: "fade",
@@ -75,19 +73,3 @@ function App() {
 }
 
 export default observer(App);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    overflow: "scroll",
-    height: "100%",
-  },
-  scrollViewStyles: {
-    width: "100%",
-  },
-});

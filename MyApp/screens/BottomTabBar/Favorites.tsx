@@ -2,8 +2,8 @@ import { observer } from "mobx-react";
 import React, { useContext } from "react";
 
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
-import { MyAppStoreContext } from "../../MyApp/index.context";
-import { UserModel } from "../../MyApp/stores/UserModel";
+import { MyAppStoreContext } from "../../index.context";
+import { UserModel } from "../../stores/UserModel";
 import { UserCard } from "./UserCard";
 
 function Favorites() {

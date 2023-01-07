@@ -1,19 +1,11 @@
 import { observer } from "mobx-react";
 import React, { useContext } from "react";
-import {
-  View,
-  Text,
-  Image,
-  Touchable,
-  TouchableOpacity,
-  Pressable,
-} from "react-native";
+import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 
-import { UserModel } from "../../MyApp/stores/UserModel";
-import HeartIcon from "../../MyApp/icons/HeartIcon";
-import { MyAppStoreContext } from "../../MyApp/index.context";
-import DislikeIcon from "../../MyApp/icons/DislikeIcon";
-import LikeIcon from "../../MyApp/icons/LikeIcon";
+import { UserModel } from "../../stores/UserModel";
+import { MyAppStoreContext } from "../../index.context";
+import DislikeIcon from "../../icons/DislikeIcon";
+import LikeIcon from "../../icons/LikeIcon";
 
 interface Props {
   user: UserModel;
@@ -22,7 +14,7 @@ interface Props {
 const UserCard = observer((props: Props) => {
   const user = props.user;
   const myStore = useContext(MyAppStoreContext);
-  const { name, firstName } = user;
+  const { name } = user;
 
   const usersStore = useContext(MyAppStoreContext);
 

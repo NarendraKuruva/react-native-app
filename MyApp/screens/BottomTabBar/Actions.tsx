@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import React, { useContext } from "react";
 import { Button, Pressable, Text, View } from "react-native";
-import { MyAppStoreContext } from "../../MyApp/index.context";
+import { MyAppStoreContext } from "../../index.context";
 
 const Actions = () => {
   const store = useContext(MyAppStoreContext);

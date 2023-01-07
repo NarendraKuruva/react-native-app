@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FlashList } from "@shopify/flash-list";
 import { UserCard } from "../BottomTabBar/UserCard";
 import { observer } from "mobx-react";
-import { UserModel } from "../../MyApp/stores/UserModel";
+import { UserModel } from "../../stores/UserModel";
 
 interface Props {
   users: UserModel[];

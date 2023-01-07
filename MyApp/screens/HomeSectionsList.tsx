@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionList, View, Text, StyleSheet, StatusBar } from "react-native";
 
-import { keyRoles, usersGroupsData } from "../data";
+import { usersGroupsData } from "../data";
 
 import HomeTab from "./HomeTab";
 
@@ -12,7 +12,7 @@ const JobSections = ({ navigation }) => {
     <View key={"JobSections"}>
       <SectionList
         sections={usersGroupsData}
-        keyExtractor={(item, index) => item + index}
+        keyExtractor={(item, index) => item + index.toString()}
         renderItem={({ item }) => renderItem(item)}
         renderSectionHeader={({ section }) => (
           <Text style={styles.header}>{section.title}</Text>

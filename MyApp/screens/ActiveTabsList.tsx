@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-} from "react-native";
+import { FlatList, SafeAreaView, StyleSheet, StatusBar } from "react-native";
 
 import NewTab from "./NewTab";
 
